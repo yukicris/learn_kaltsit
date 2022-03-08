@@ -35,4 +35,5 @@ public class Xinwen1 {
     public void setValue(String value) {
         this.value = value;
     }
+
 }
