@@ -3,6 +3,7 @@ package com.yukicris.Redis.LearnNote1;
 public class Nosql {
 
     /**
+     * 0 - 2为理论
      * 为什么要使用Nosql
      *
      *  历史解析
