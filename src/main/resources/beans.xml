@@ -10,8 +10,12 @@
     </bean>
 
 
-    <!-- 这个bean对应tst1的配置-->
-    <bean id="mysqlImpl" class="com.yukicris.Spring5.tst1.dao.UserDaoMysqlImpl">
+    <!-- 这个bean对应tst1的配置
+        id :bean的唯一标识符,相当于对象名
+        calss: bean对象所对应的全限定名: 包名+类型
+        <bean> 里面的name(不是property) :也是别名,而且name可以同时取多个别名name="u1,u2,u3.."
+    -->
+    <bean id="mysqlImpl" class="com.yukicris.Spring5.tst1.dao.UserDaoMysqlImpl" >
     </bean>
     <bean id="oracleImpl" class="com.yukicris.Spring5.tst1.dao.UserDaoOracleImpl">
     </bean>
@@ -21,5 +25,24 @@
         -->
         <property name="userDao" ref="mysqlImpl"/>
     </bean>
+
+    <!-- 这个bean对应tst3的配置-->
+    <bean id="user" class="com.yukicris.Spring5.tst3.pojo.User">
+        <!-- 默认无参形式构建
+        <property name="name" value="yukicris"/>-->
+
+        <!-- 现在由于构造器变成有参的了,那么就无法使用默认无参构建bean了-->
+        <!--1 下标赋值法
+        <constructor-arg index="0" value="yukicris" />-->
+
+        <!--2 通过类型创建,不建议使用,多个类型相同会按照xml顺序赋值
+        <constructor-arg type="java.lang.String" value="yukicris"></constructor-arg>-->
+
+        <!--3 直接通过参数名来设置-->
+        <constructor-arg name="name" value="yukicris" />
+
+
+    </bean>
+
 
 </beans>

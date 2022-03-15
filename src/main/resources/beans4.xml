@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+">
+
+    <!--或者不要下面的这些bean,使用注解的方式,只需要定义扫描的包-->
+    <context:component-scan base-package="com.yukicris.Spring5"/>
+     <context:annotation-config/>
+    <bean id="cat" class="com.yukicris.Spring5.tst4.pojo.Cat" />
+    <bean id="dog" class="com.yukicris.Spring5.tst4.pojo.Dog" />
+
+    <!--byname  会自动在容器上下文中查找和自己set方法后面的值对应的beanId-->
+    <bean id="person" class="com.yukicris.Spring5.tst4.pojo.Person" autowire="byName">
+        <property name="name" value="yukicris"/>
+      <!--  <property name="cat" ref="cat"/>
+        <property name="dog" ref="dog" />-->
+    </bean>
+
+    <!--byType  会自动在容器上下文中查找和自己对象属性类型(Dog,Cat)相同的bean,且类型必须唯一-->
+    <bean id="person" class="com.yukicris.Spring5.tst4.pojo.Person" autowire="byType">
+        <property name="name" value="yukicris"/>
+        <!--  <property name="cat" ref="cat"/>
+          <property name="dog" ref="dog" />-->
+    </bean>
+
+</beans>
