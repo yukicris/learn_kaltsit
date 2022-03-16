@@ -70,6 +70,12 @@
             <artifactId>jedis</artifactId>
             <version>3.7.0</version>
         </dependency>
+
+        <dependency>
+             <groupId>org.aspectj</groupId>
+             <artifactId>aspectjweaver</artifactId>
+             <version>1.9.4</version>
+         </dependency>
         <!-- 导出excel组件,,1.1.2版本为beta测试版,故使用1.1.1,详细文档参考 :https://github.com/alibaba/easyexcel/blob/master/quickstart.md
         <dependency>
             <groupId>com.alibaba</groupId>
