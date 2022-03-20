@@ -15,7 +15,7 @@
     <bean id="dog" class="com.yukicris.Spring5.tst4.pojo.Dog" />
 
     <!--byname  会自动在容器上下文中查找和自己set方法后面的值对应的beanId-->
-    <bean id="person" class="com.yukicris.Spring5.tst4.pojo.Person" autowire="byName">
+    <bean id="person" class="com.yukicris.Spring5.tst4.pojo.Person" autowire="byName" >
         <property name="name" value="yukicris"/>
       <!--  <property name="cat" ref="cat"/>
         <property name="dog" ref="dog" />-->

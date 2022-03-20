@@ -1,4 +1,4 @@
-package com.yukicris.JVM;
+package com.yukicris.JVM.java;
 
 public class Car {
 

@@ -1,14 +1,28 @@
 package com.yukicris.dataStructure;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Maopao {
     public static void main(String[] args) {
         System.out.printf("初始化项目");
         //数组定义
-        Maopao.shuzudingyi();
+       // Maopao.shuzudingyi();
         // 冒泡排序
-        Maopao.maopaopaixu();
+       // Maopao.maopaopaixu();
+
+        List<Integer> list = new ArrayList<>();
+        list.add(8);
+        list.add(6);
+        list.add(5);
+        list.add(7);
+        list.add(2);
+        list.add(4);
+        list.add(1);
+
+        // 冒泡排序2
+        Maopao.maopaopaixu2(list);
     }
 
 
@@ -48,6 +62,24 @@ public class Maopao {
         System.out.printf(""+Arrays.toString(a));
         return  a;
     }
+
+
+    public static List<Integer> maopaopaixu2 (List<Integer> list) {
+        int temp;
+        for(int i=0;i<list.size()-1;i++){
+            for(int j=1;j<list.size()-i;j++){
+                if (list.get(j-1)>(list.get(j))){
+                    temp = list.get(j-1);
+                    list.set(j-1,list.get(j));
+                    list.set(j,temp);
+                }
+            }
+        }
+        System.out.println(list);
+        return list;
+    }
+
+
 
 
 
