@@ -11,6 +11,8 @@
     <groupId>com.yukicris</groupId>
     <artifactId>kaltsit_worklist</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
+
     <name>kaltsit_worklist</name>
     <description>Demo project for Spring Boot</description>
     <properties>
