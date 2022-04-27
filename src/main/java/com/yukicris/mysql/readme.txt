@@ -10,10 +10,10 @@ https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.19-winx64.zip
 
 2、解压到自己想要安装到的目录，本人解压到的是D:\Environment\mysql-5.7.19
 
-3、添加环境变量：我的电脑->属性->高级->环境变量
-
+3、添加环境变量：我的电脑->属性->高级->环境变量(系统变量)
 选择PATH,在其后面添加: 你的mysql 安装文件下面的bin文件夹
-4、编辑 my.ini 文件 ,注意替换路径位置
+
+4、编辑 my.ini 文件 ,注意替换路径位置,没有就新建一个到根目录下
 
 [mysqld]
 basedir=D:\mysql\mysql-5.7.19-winx64\
@@ -40,5 +40,22 @@ net stop mysql
 net start mysql
 12、连接上测试出现以下结果就安装好了
 ————————————————
-版权声明：本文为CSDN博主「狂神说」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/qq_33369905/article/details/105828923
+
+
+ps . 如果以前没删除干净导致无法安装
+以管理员身份运行cmd
+输入sc query mysql
+回车
+输入sc delete mysql
+
+ps2 . 启动失败试试这个
+D:\mysql\mysql-5.7.19-winx64\bin>mysqld -remove MYSQL
+Service successfully removed.
+D:\mysql\mysql-5.7.19-winx64\bin>mysqld --initialize-insecure   //初始化配置
+D:\mysql\mysql-5.7.19-winx64\bin>mysqld --install
+Service successfully installed.
+
+D:\mysql\mysql-5.7.19-winx64\bin>net start mysql
+MySQL 服务正在启动 .
+MySQL 服务已经启动成功。

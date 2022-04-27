@@ -15,6 +15,8 @@ public class BaseKnowledge {
     // List,Map,Set
     /**
      * Set(集合) 没有按序进行排序,且不可重复,
+     *在set集合中，hashset 集合比较两个对象是否相等，首先看
+     * hashcode 方法是否相等，然后看 equals 方法是否相等。
      * 实现了HashSet方法存取速度很快,TreeSet可以对集合里的对象进行排序
      *
      *
