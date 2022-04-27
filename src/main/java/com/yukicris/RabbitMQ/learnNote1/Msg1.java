@@ -1,4 +1,4 @@
-package RabbitMQ.learnNote1;
+package com.yukicris.RabbitMQ.learnNote1;
 
 public class Msg1 {
     /**
@@ -85,7 +85,7 @@ public class Msg1 {
 
     /**
      * 分发机制
-     *      RabbitMQ:1 发布订阅 2 轮询分发(公平) 3 公平分发(也是轮询,不过能者多劳) 4 重发 5 消息拉取
+     *      com.yukicris.RabbitMQ:1 发布订阅 2 轮询分发(公平) 3 公平分发(也是轮询,不过能者多劳) 4 重发 5 消息拉取
      *
      */
 

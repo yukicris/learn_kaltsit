@@ -1,4 +1,4 @@
-package RabbitMQ.learnNote1;
+package com.yukicris.RabbitMQ.learnNote1;
 
 public class Msg3 {
     // 核心概念
@@ -10,10 +10,10 @@ public class Msg3 {
 
     /**
      * Broker
-     * Broker 简单理解就是 RabbitMQ 服务器，图中整个灰色部分.
+     * Broker 简单理解就是 com.yukicris.RabbitMQ 服务器，图中整个灰色部分.
      *
      * vHost 虚拟主机
-     * 每一个 RabbitMQ 可以开设多个vHost，每个vHost是一个mini版的RabbitMQ，拥有自己的交换机Exchange，绑定Bidding，队列Queue。更重要的是每个RabbitMQ里面都有独立的权限机制，这样就可以是使用RabbitMQ来服务多个独立的应用，其中每个vHost服务一个应用程序。
+     * 每一个 com.yukicris.RabbitMQ 可以开设多个vHost，每个vHost是一个mini版的RabbitMQ，拥有自己的交换机Exchange，绑定Bidding，队列Queue。更重要的是每个RabbitMQ里面都有独立的权限机制，这样就可以是使用RabbitMQ来服务多个独立的应用，其中每个vHost服务一个应用程序。
      * 每一个RabbitMQ 都有一个默认的虚拟主机"/",客户端连接RabbitMQ必须指定vHost，如果不指定的话，默认连接"/"。
      *
      * Exchange 交换机

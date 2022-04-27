@@ -1,4 +1,4 @@
-package RabbitMQ.learnNote1;
+package com.yukicris.RabbitMQ.learnNote1;
 
 public class Msg5 {
     // 公平分发与轮询分发

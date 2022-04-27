@@ -1,4 +1,4 @@
-package RabbitMQ.learnNote1;
+package com.yukicris.RabbitMQ.learnNote1;
 
 public class Msg2 {
     /**
@@ -47,7 +47,7 @@ public class Msg2 {
      * echo 'export PATH=$PATH:/usr/local/rabbitmq/sbin' >> /etc/profile
      * source /etc/profile
      *
-     * #启动
+     * #启动(随系统后台启动,不然就关闭shell会话就自动关闭mq了)
      * rabbitmq-server -detached
      *
      * #重启
@@ -81,6 +81,24 @@ public class Msg2 {
      *
      * #重启防火墙
      * firewall-cmd --reload
+     */
+
+    /**
+     * rabbitmq启动的方式有三种:
+     *
+     * 　　1.一个是rabbitmq-server -detached 后台启动，rabbitmqctl stop 停止
+     *
+     * 　　2.Rabbitmq-server 窗口启动，关闭窗口时rabbitmq停止，使用rabbitmqctl stop也可停止
+     *
+     * 　　3.rabbitmq桌面安装时，任务管理器中会出现对应的服务
+     *
+     * 后台管理界面启动插件安装：
+     *
+     * 　　rabbitmq-plugins enable rabbitmq_management 启动
+     *
+     * 　　rabbitmq-plugins disable rabbitmq_management 关闭
+     *
+     * 　　后台管理界面是以插件的形式需要用户手动安装，不像activemq启动后后台管理服务也自动启动可直接访问，
      */
 
 }
