@@ -20,7 +20,7 @@ public class Maopao {
         list.add(2);
         list.add(4);
         list.add(1);
-
+        System.out.println("list"+list.size());
         // 冒泡排序2
         Maopao.maopaopaixu2(list);
     }
@@ -60,6 +60,7 @@ public class Maopao {
             }
         }
         System.out.printf(""+Arrays.toString(a));
+        System.out.println("数组"+ a.length);
         return  a;
     }
 

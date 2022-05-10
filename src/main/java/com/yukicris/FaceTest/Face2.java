@@ -87,5 +87,19 @@ public class Face2 {
 
     public static void main(String[] args) {
         String str = "a" + "b" + "c";
+        String str1 = "abc";
+        String a = "a";  String b = "b";   String c = "c";
+        String str2 = a+b+c;
+        System.out.println(str);
+        System.out.println(str1);
+        System.out.println(str2);
+
+        System.out.println(str == str1);
+        System.out.println(str == str2);
+        System.out.println(str1 == str2);
+        System.out.println(str.equals(str1) );
+        System.out.println(str.equals(str2));
+        System.out.println(str1.equals(str2));
+
     }
 }
