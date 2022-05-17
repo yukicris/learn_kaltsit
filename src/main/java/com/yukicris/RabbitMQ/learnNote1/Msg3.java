@@ -33,7 +33,7 @@ public class Msg3 {
      * Routing key 是消息头的属性，当生产者将消息发送到交换机的时候，会在消息头上带一个key，这个key就是Routing key，来指定这个消息的路由规则。
      *
      * Binding
-     * 绑定，可以理解成一个动词，把Exchang 和 Queue 绑定起来。
+     * 绑定，可以理解成一个动词，把Exchang 和 Queue(队列) 绑定起来。
      *
      * Binding key
      * 在绑定Exchange 和 Queue 的时候，需要指定一个 Binding key,生产者将消息发送给Exchange 的时候，会带一个 Roution key,当Routing key 和 Binding key匹配成功，消息会被路由到相应的Queue 中

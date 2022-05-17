@@ -40,7 +40,7 @@ public class Msg4 {
      *
      * exchange 类型选择header,然后绑定多个队列queues
      * 在发布订阅模式的基础之上,给队列增加一个(或多个)argument做过滤条件
-     * 再给exchange推送消息,选择对应的headers,即可使指定路由key的队列都接受到消息 即为主题模式
+     * 再给exchange推送消息,选择对应的headers,即可使指定路由key的队列都接受到消息 即为头模式
      */
 
 }

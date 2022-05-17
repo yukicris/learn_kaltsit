@@ -20,6 +20,9 @@ public class Sc4_Feign {
      *
      * 使用方法
      *
+     *
+     * 代码见 api项目和feign项目
+     *
      * 1 编写的service上加注解@FeignClient(value="SPRINGCLOUD-PROVIDER-DEPT") 绑定服务
      * 2 编写的service接口上加接口注解
      *      @GetMapping("/dept/get/{id}")
@@ -32,6 +35,10 @@ public class Sc4_Feign {
      *     private DeptClientService deptClientService = null;
      *
      * 5 负载均衡策略改RestTemplate中的注解,默认loadbalance 轮询
+     *
+     *
+     *
+     *
      *
      *
      */
