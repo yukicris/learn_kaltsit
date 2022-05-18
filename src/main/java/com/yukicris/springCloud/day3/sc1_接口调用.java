@@ -3,6 +3,9 @@ package com.yukicris.springCloud.day3;
 public class sc1_接口调用 {
     /**
      *
+     * 分布式难点主要是在于分布式锁和分布式缓存,这部分视频没有详细讲解,需要以后自己慢慢看慢慢学
+     *
+     *
      * 1 分布式为了实现网络通信,需要给实体类进行序列化Serizable (必须)
      *
      *
