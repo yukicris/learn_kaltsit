@@ -11,7 +11,7 @@ public class Nosql16 {
 
     /**
      * 很乐观,认为什么时候都不会出问题,所以不会上锁,更新数据的时候才去判断,在此期间是否有人修改过这个数据
-     * (mysql里面用的version)
+     * (mysql里面用的version,每次更新就会带个version字段,来判断是否有更新操作)
      */
 
     //Redis测监视测试
