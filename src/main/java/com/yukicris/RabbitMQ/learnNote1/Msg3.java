@@ -38,10 +38,7 @@ public class Msg3 {
      * Binding key
      * 在绑定Exchange 和 Queue 的时候，需要指定一个 Binding key,生产者将消息发送给Exchange 的时候，会带一个 Roution key,当Routing key 和 Binding key匹配成功，消息会被路由到相应的Queue 中
      *
-     * 作者：你的眼里躺着海
-     * 链接：https://www.jianshu.com/p/fadcb916cce8
-     * 来源：简书
-     * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
      *
      *
      */

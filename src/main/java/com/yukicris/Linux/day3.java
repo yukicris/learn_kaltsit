@@ -1,6 +1,6 @@
 package com.yukicris.Linux;
 
-public class day3 {
+public class  day3 {
 
     // 文章参考https://mp.weixin.qq.com/s/4dZ3mbu287pC6mdGOczGAA
     /**
