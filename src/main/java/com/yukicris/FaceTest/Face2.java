@@ -101,5 +101,17 @@ public class Face2 {
         System.out.println(str.equals(str2));
         System.out.println(str1.equals(str2));
 
+/*
+abc
+abc
+abc
+true
+false
+false
+true
+true
+true
+*/
+
     }
 }

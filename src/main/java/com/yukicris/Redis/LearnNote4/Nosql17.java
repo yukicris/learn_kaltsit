@@ -58,6 +58,11 @@ public class Nosql17 {
         System.out.println("返回当前数据库的key数目"+ jedis.dbSize());
         System.out.println("删所有数据库的所有key"+jedis.flushAll());
 
+        //测试特殊类型
+        /*jedis.geoadd();
+        jedis.pfadd();
+        jedis.setbit();*/
+
 
 
 

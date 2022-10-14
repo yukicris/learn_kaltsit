@@ -4,7 +4,7 @@ public class Nosql11 {
     /**
      * Zset有序集合
      *
-     * 在set的基础上,增加了一个(标号score)分数值,set k1 v1 zSet k1 score v1
+     * 在set的基础上,增加了一个(标号score)分数值,set k1 v1 ,zSet k1 score v1
      */
 
     /**
