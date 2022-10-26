@@ -19,7 +19,7 @@
     </bean>
     <bean id="oracleImpl" class="com.yukicris.Spring5.tst1.dao.UserDaoOracleImpl">
     </bean>
-    <bean id="UserserviceImpl" class="com.yukicris.Spring5.tst1.service.UserServiceImpl">
+    <bean id="UserserviceImpl" class="com.yukicris.Spring5.tst1.service.UserServiceImpl" scope="singleton">
         <!-- 这个ref指向应用spring容器中已经创建好的对象
                 value: 具体的值,基本数据类型
         -->

@@ -1,4 +1,4 @@
-package com.yukicris.dataStructure;
+package com.yukicris.dataStructure.Digui_Recursively;
 
 public class Digui2 {
     // 简单递归 1+2+3+...n

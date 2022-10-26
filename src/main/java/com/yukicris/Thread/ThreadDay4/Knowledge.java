@@ -24,5 +24,16 @@ public class Knowledge {
      * boolean isAlive() 测试线程是否处于活动状态
      */
 
+    //线程停止 不推荐jdk提供的stop,destory方法(已废弃)
+    // 推荐线程自己停止下来,建议使用一个标志位进行终止变量,当flag=false,则跳出循环终止线程运行
+
+
+    //线程休眠
+    //sleep(时间) 指定当前线程阻塞的毫秒数
+    //sleep存在异常InterruptedException
+    //sleep时间达到后线程进入就绪状态
+    //sleep可以模拟网络延时,倒计时等
+    //*****每个对象有一个锁,sleep不会释放锁****
+
     
 }

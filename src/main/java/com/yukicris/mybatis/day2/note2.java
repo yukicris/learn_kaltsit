@@ -15,7 +15,7 @@ public class note2 {
     </typeAliases>*/
     //方法2 ,指定包名,然后使用的时候用包里的类名首字母小写,比如resultType=user
      /*<typeAliases>
-        <typeAlias type="yukicris.pojo"</typeAlias>
+        <typeAlias type="yukicri5s.pojo"</typeAlias>
     </typeAliases>*/
 
     //区别,第一种可以自己定义别名,第二种就不行

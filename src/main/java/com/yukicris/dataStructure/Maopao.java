@@ -10,7 +10,7 @@ public class Maopao {
         //数组定义
        // Maopao.shuzudingyi();
         // 冒泡排序
-       // Maopao.maopaopaixu();
+        Maopao.maopaopaixu();
 
         List<Integer> list = new ArrayList<>();
         list.add(8);
@@ -77,6 +77,7 @@ public class Maopao {
             }
         }
         System.out.println(list);
+        System.out.println(list.size());
         return list;
     }
 

@@ -72,6 +72,6 @@ public class Nginx1 {
      *  负载均衡: upstream yukicris {
      *      server 127.0.0.1:8080 weight=1;
      *      server 127.0.0.1:8081 weight=1;
-     *  }
+     *  }   
      */
 }

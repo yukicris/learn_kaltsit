@@ -1,8 +1,7 @@
-package com.yukicris.dataStructure;
+package com.yukicris.dataStructure.Digui_Recursively;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Digui {
     ArrayList<ArrayList<Integer>> res;
