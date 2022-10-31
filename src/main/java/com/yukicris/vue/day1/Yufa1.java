@@ -2,7 +2,7 @@ package com.yukicris.vue.day1;
 
 public class Yufa1 {
     /**
-     * v-bind 绑定
+     * v-bind 绑定 可以简写成  ':'  比如 :title
      *
      * v- 这种格式就是vue特有的指令,表示它是vue提供的特殊属性
      * v-for 参考demo2
@@ -47,7 +47,11 @@ public class Yufa1 {
      */
 
     /**
-     * 插槽,进度p10
+     * 插槽,进度p10(组合组件)
+     * 这个例子版本问题比较严重,没有成功实现,见demo9,类似于往A组件中引入了B组件,然后在B组件中留了个位置slot标签用来做其他功能的引入
+     *
+     *
+     * 组件内部绑定组件 this.$emit('事件名',参数)
      */
 }
 

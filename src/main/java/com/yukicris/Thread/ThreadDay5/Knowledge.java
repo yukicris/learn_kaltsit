@@ -44,7 +44,7 @@ public class Knowledge {
         //ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(3, 5, 1L, TimeUnit.SECONDS, new ArrayBlockingQueue<>(3), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
         //可以直接用ExecutorService调用
         ExecutorService executorService = new ThreadPoolExecutor(3, 5, 1L, TimeUnit.SECONDS, new ArrayBlockingQueue<>(3), Executors.defaultThreadFactory(),new ThreadPoolExecutor.AbortPolicy());
-        //创建技术器
+        //创建计数器
         CountDownLatch countDownLatch = new CountDownLatch(10);
         for (int i=0;i<10;i++){
                 executorService.execute(()->{
