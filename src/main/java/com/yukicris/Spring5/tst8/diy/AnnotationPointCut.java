@@ -16,7 +16,7 @@ public class AnnotationPointCut {
     // execution 的目的执行找到这个...类的所有方法,无论多少参数
     @Before("execution(* com.yukicris.Spring5.tst8.service.UserServiceImpl.*(..))")
     public void before() {
-        System.out.print("方法执行前");
+        System.out.print("方法执行前===");
     }
 
 
