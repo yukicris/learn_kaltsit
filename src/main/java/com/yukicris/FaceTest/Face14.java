@@ -19,6 +19,6 @@ public class Face14 {
 
     //vue双向绑定的原理
 
-    //css 绝对路径
+    //css 绝对路径  position
 
 }
