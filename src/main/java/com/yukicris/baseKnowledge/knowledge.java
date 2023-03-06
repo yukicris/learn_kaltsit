@@ -1,5 +1,7 @@
 package com.yukicris.baseKnowledge;
 
+import com.yukicris.vue.day1.Knowledge;
+
 public class knowledge {
 
     String name;
@@ -172,7 +174,7 @@ public class knowledge {
     /**
      * 构造器
      * 作用是: 1 使用new 关键字的时候,本质调用构造器
-     *        2构造器一般用来初始化值
+     *        2 构造器一般用来初始化值
      *
      *
      * 又称为构造方法,创建对象时必须要调用!
@@ -324,7 +326,9 @@ public class knowledge {
         }*/
     }
     // 通过外部类来实例化内部类
-    // Outer.Inner inner = outer.new Inner();
+   /* Knowledge knowledge = new Knowledge();
+    knowledge.Inner inner = new Inner();*/
+
 
     /**
      * 局部内部类
@@ -383,7 +387,20 @@ public class knowledge {
 
 // 一个java类中,可以有多个class类,但是只能有一个public class,
 class A{
+   /* static void test(int a) throws knowledge.MyException {
+        System.out.println("传递的参数为："+a);
+        if (a>10){
+            throw knowledge.MyException(a);//抛出
+        }
+        System.out.println("OK");
+    }
+
     public static void main(String[] args) {
         // 一般用来写测试,因为可以写main方法
-    }
+        try{
+            test(11);
+        }catch (knowledge.MyException e){
+            System.out.println(""+e);
+        }
+    }*/
 }

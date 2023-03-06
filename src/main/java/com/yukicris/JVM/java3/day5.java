@@ -39,7 +39,7 @@ public class day5 {
 然后举一反三,把后面的异常名字改一下就可以知道代码问题出在哪里了
      -Xms8m -Xmx8m -XX:+HeapDumpOnOutOfMemoryError
      //参数对应名称: -Xms:设置初始化内存分配大小,默认64分之一
-      -Xms:最大分配内存,默认为四分之一
+      -Xmx:最大分配内存,默认为四分之一
       -XX:+PrintGCDetail   //打印垃圾回收信息
      -XX:+HeapDumpOnOutOfMemoryError   //oom dump
      */

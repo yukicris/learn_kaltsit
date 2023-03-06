@@ -36,6 +36,7 @@ public class note2 {
     //补充一个冷知识,oracle是默认全大写,last_name这种会识别成LAST_NAME,所以一般加_方便阅读,mysql不区分大小写
     //cacheEnabled 全局地开启或者关闭配置文件中所有的映射器已经配置的任何缓存
     // lazyLoaingEnabled 延迟加载的全局开关,开启扇所有关联对象都会延迟加载,特定关联关系可以通过设置fetchType属性来覆盖该项的开关状态
+    // 懒加载通俗的说就是分步加载、按需加载；需要的时候再去操作
     //logImpl	指定 MyBatis 所用日志的具体实现，未指定时将自动查找。
 
 
