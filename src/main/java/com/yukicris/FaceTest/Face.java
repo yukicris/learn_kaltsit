@@ -7,10 +7,11 @@ public class Face {
          * 今年27岁,从2017年至今已经从事了5年JAva开发 工作
          * 完整参与过多个项目的开发以及部分项目的后续维护工作
          * 在项目中 我曾使用过多个后台框架如spring,mybatis以及微服务框架springboot,
-         * 掌握并参与设计过mysql,postgreSql等数据库库表,
+         * 掌握并参与设计项目库表搭建,
          * 也可以熟练使用redis缓存数据库以及RabbitMq消息分发中间件
          * 同时也可兼任前端Vue框架的功能开发
          * 项目后期也可参与项目Linux环境下后端tomcat部署以及JVM调优等运维工作
+         * 也使用过禅道,confluence,eazyops,jira等项目管理工具
          * 我善于在工作中总结和学习,希望在这场面试中可以和面试官多多交流学习
          *
          *
