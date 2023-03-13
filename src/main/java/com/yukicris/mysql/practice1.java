@@ -18,7 +18,7 @@ public class practice1 {
     ORDER BY
     avg_comp_play_rate desc*/
 
-    /**
+    /**000
      * 考点在 round(a/b,3)  a/b保留3位小数
      * TIMESTAMPDIFF 计算时间差 TIMESTAMPDIFF( SECOND, start_time, end_time ) 按秒来计算
      * using(video_id) 等同于 ON t1.video_id = t2.video_id

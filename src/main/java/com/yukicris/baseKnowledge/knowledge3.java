@@ -93,7 +93,7 @@ public class knowledge3 {
      *              <url-pattern>/hello/*</url-pattern>
      *          </servlet-mapping>
      *     5.配置Tomcat
-     *          注意: 配置项目房补的路径就可以了
+     *          注意: 配置项目的路径就可以了
      *          (运行那里,类似配置npm启动,找到tomcat,点local,确保端口,jre正常,默认浏览器存在且有jmx port端口(1099),然后点Deployment,
      *          点＋,artifact,改个名字就行)
      *

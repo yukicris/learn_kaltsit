@@ -19,7 +19,7 @@ public class Nosql2 {
      *       HBase
      *       分布式文件系统
      *
-     *  图数据库
+     *  图数据库5
      *      他不是存图形的,放的是关系,比如朋友圈社交网络,广告推荐
      *      Neo4j,InfoGrid等
      *
