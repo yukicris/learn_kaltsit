@@ -7,4 +7,6 @@ public class Face15 {
     //hashmap扩容
     //Arraylist和linkedlist
     //锁 syncornized和lock
+    //没寄,但是也没好到哪去
+
 }

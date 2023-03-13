@@ -19,7 +19,12 @@ public class Day1 {
 
         public static void main(String[] args) {
 
+
         }
+
+
+        //疑问,公司看到有个代码很奇怪,用的是一种可以返回参数的开启线程的方式
+
 
 
 }
