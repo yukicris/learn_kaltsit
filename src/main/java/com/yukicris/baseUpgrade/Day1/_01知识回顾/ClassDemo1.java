@@ -20,7 +20,7 @@ package com.yukicris.baseUpgrade.Day1._01知识回顾;
  *
  *      定义类的格式 class {
  *          //1 成员变量 (Field: 描述类和对象的属性信息)
- *          //2 成员方法 (Method: 描述类或对象的行为信息)
+ *          //2 成员方法 (Method: 描述类或对象的行为信息).
  *          //3 构造器   (Constructor: 初始化一个类的对象并且返回引用)
  *          //4 代码块
  *          //5 内部类

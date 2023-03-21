@@ -128,6 +128,19 @@ public class java_stream2 {
         collect();
 
         reduce();
+
+        /**
+         *
+         * true
+         * true
+         * true
+         * Optional[avc]
+         * Optional[bc]
+         * Optional[avc]
+         * avcbbcdeffsd[bc, de, ffsd, avc]
+         * map{yukicris_de=de, yukicris_bc=bc, yukicris_ffsd=ffsd, yukicris_avc=avc}
+         * reduceavcbbcdeffsd
+         */
     }
 
 }

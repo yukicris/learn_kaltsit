@@ -1,6 +1,7 @@
 package com.yukicris.dataStructure.mianshibaodian;
 
 import java.util.Deque;
+import java.util.Stack;
 
 public class Test5 {
     public static void main(String[] args) {
@@ -28,6 +29,9 @@ public class Test5 {
     Deque<Integer> inStack;
     Deque<Integer> outStack;
 
+    Stack<Integer> ins;
+    Stack<Integer> ots;
+
     public Test5() {
 
     }
@@ -35,6 +39,7 @@ public class Test5 {
     public void appendTail(int value) {
         //只需要入栈即可(加入队列)
         inStack.push(value);
+        ins.push(value);
     }
 
 
@@ -53,7 +58,34 @@ public class Test5 {
         }
     }
 
+/*我的解
+    class CQueue {
 
+        Stack<Integer> ins;
+        Stack<Integer> ots;
+
+        public CQueue() {
+            ins = new Stack<>();
+            ots = new Stack<>();
+        }
+
+        public void appendTail(int value) {
+            ins.push(value);
+        }
+
+        public int deleteHead() {
+            if(ots.isEmpty()){
+                if(ins.isEmpty()){
+                    return -1;
+                }else {
+                    while (!ins.isEmpty()){
+                        ots.push(ins.pop());
+                    }
+                }
+            }
+            return ots.pop();
+        }
+    }*/
 
 /**
  * Your CQueue object will be instantiated and called as such:
