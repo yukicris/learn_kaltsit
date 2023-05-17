@@ -5,6 +5,7 @@ import com.yukicris.Spring5.tst1.dao.UserDaoImpl;
 import org.apache.catalina.User;
 
 public class UserServiceImpl implements UserService{
+    // 以前代码,业务层需要调用dao层,然后dao层有多个实现,比如mysql,oracle,和那个daoImpl
     // 如果我想在这里调用userDaoMysqlimpl,我必须要更改整个实现的对象,否则不是我想要用的对象
     // 即修改private UserDao userDao = new UserDaoMysqlImpl();
     //private UserDao userDao = new UserDaoImpl();

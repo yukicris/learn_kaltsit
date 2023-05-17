@@ -80,6 +80,8 @@ public class  day3 {
      *  tac 从最后一行开始显示文件内容  *(倒写cat)
      *  nl 显示的时候,顺带输出行号    希望显示行号的时候常用
      *  more 一页一页的显示文件内容   空格代表翻页,enter代表写一行,:f行号
+     *
+     *  grep -o 'KeyWord' 03.txt | wc -l  统计关键字出现的次数
      *  //下面这个实用
      *  less和more类似,但是比more更好,他可以往前翻页   空格代表翻页,enter代表写一行,:f行号,上下键代表上下页,退出使用 q命令
      *      然后查找字符串用/要查询的字符+回车 ,向上查询 用?要查询的字符串, n继续搜索下一个,N代表向上寻找
@@ -141,4 +143,11 @@ public class  day3 {
     du -h [目录名]：查看指定文件夹下的所有文件大小（包含子文件夹）*/
 
     //查端口netstat -anp
+
+ /*     1.查看文件前几行:head
+            head -n 5 TAIR10_chr_all.fas
+        2.查看文件后几行:tail
+            tail -n 5 TAIR10_chr_all.fas
+        3.逐页显示文本: less
+            less TAIR10_chr_all.fas*/
 }

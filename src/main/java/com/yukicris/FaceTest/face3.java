@@ -6,6 +6,7 @@ public class face3 {
     /**
      * 1 比较对象
      *      compare方法
+     *      如果equals返回true ,那么compareto就返回0
      *
      *
      * 2 数据库

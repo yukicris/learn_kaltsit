@@ -52,4 +52,59 @@ public class day6 {
 
     //年轻代 存活率低,复制算法
     //老年代 存活率高,区域大,标记清除+标记压缩混合实现(需要人考虑多少次进行标记清除,比如内存碎片不多,就多用标记清除)
+
+
+
+   /* 方法区：（逻辑上）
+
+    逻辑上的东西，是JVM 的规范，所有虚拟机必须遵守的。
+
+    是JVM 所有线程共享的、用于存储类的信息、常量池、方法数据、方法代码等。
+
+    永久代：（方法区的实现、JDK7及之前、主要是和元空间对比）
+
+    PermGen ， 就是 PermGen space ，全称是 Permanent Generation space ，是指内存的永久保存区域。
+
+    PermGen space 则是 HotSpot 虚拟机基于JVM规范对方法区的一个落地实现，并且只有 HotSpot 才有 PermGen space。
+    而如 JRockit（Oracle）、J9（IBM） 虚拟机有方法区 ，但是就没有 PermGen space。
+    PermGen space 是JDK7及之前， HotSpot虚拟机对方法区的一个落地实现。在JDK8被移除。‘
+    Metaspace（元空间、JDK8及之后）：
+
+    元空间与永久代之间最大的区别在于：元空间并不在虚拟机中，而是使用本地内存。
+
+    移除PermGen（永久代）从从JDK7 就开始。例如，字符串内部池，已经在JDK7 中从永久代中移除。直到JDK8 的发布将宣告 PermGen（永久代）的终结。
+    其实，移除 PermGen 的工作从 JDK7 就开始，永久代的部分数据就已经转移到了 Java Heap 或者是 Native Heap。
+    但永久代仍存在于JDK7 中，并没完全移除，比如：
+    字面量 （interned strings）转移到 Java heap；
+    类的静态变量（class statics）转移到Java heap ；
+    符号引用（Symbols） 转移到 Native heap ；
+    JDK版本	方法区的实现	运行时常量池所在的位置
+    JDK6	PermGen space（永久代）	PermGen space（永久代）
+    JDK7	PermGen space（永久代）	Heap（堆）
+    JDK8	Metaspace（元空间）	Heap（堆）
+    JDK6、JDK7 时，方法区 就是 PermGen（永久代）。
+    JDK8 时，方法区就是 Metaspace（元空间）。
+
+    这篇文章写的很好：JVM之 方法区、永久代（PermGen space）、元空间（Metaspace）三者的区别
+
+
+
+    为什么使用元空间替换永久代？
+
+    表面上看是为了避免OOM异常。
+
+    因为通常使用PermSize和MaxPermSize设置永久代的大小就决定了永久代的上限，但是不是总能知道应该设置为多大合适, 如果使用默认值很容易遇到OOM错误。
+
+    当使用元空间时，可以加载多少类的元数据就不再由MaxPermSize控制, 而由系统的实际可用空间来控制。
+
+    更深层的原因还是要合并HotSpot和JRockit的代码，JRockit从来没有所谓的永久代，也不需要开发运维人员设置永久代的大小，但是运行良好。同时也不用担心运行性能问题了,在覆盖到的测试中, 程序启动和运行速度降低不超过1%，但是这点性能损失换来了更大的安全保障。
+
+    由于永久代内存经常不够用或者发生内存泄露，爆出异常 java.lang.OutOfMemoryError: PermGen 。
+    字符串存在永久代中，容易出现性能问题和内存溢出。
+    类及方法的信息等比较难确定其大小，因此对于永久代的大小指定比较困难，太小容易出现永久代溢出，太大则容易导致老年代溢出。
+    永久代会位GC带来不必要的复杂度，而且回收效率偏低。
+    Oracle可能会将HotSpot和JRockit合二为一。
+            ————————————————
+    版权声明：本文为CSDN博主「沐雨金鳞」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+    原文链接：https://blog.csdn.net/qq_38262266/article/details/107208357*/
 }
