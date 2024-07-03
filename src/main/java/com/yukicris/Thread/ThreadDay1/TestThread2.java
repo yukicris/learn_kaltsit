@@ -27,9 +27,11 @@ public class TestThread2 extends Thread{
     public static void main(String[] args) {
        //这里就是有参构造的好处,构造器是用来创建对象完成对象初始化的,然后有参构造相当于是有参构造 = 无参构造 + setter方法
         //这里就可以直接在new 后面拼值
-        TestThread2 t1 = new TestThread2("https://imgsa.baidu.com/forum/w%3D580/sign=1ea440d22f3fb80e0cd161df06d02ffb/a92da8d3fd1f41348847499d2b1f95cad0c85e97.jpg","1.jpg");
-        TestThread2 t2 = new TestThread2("https://imgsa.baidu.com/forum/w%3D580/sign=5711ffcb387adab43dd01b4bbbd5b36b/d8f97bcb0a46f21f110112b0f8246b600d33aecb.jpg","2.jpg");
-        TestThread2 t3 = new TestThread2("http://tiebapic.baidu.com/forum/w%3D580/sign=8207f7b92cc79f3d8fe1e4388aa0cdbc/3981f8faaf51f3deffb50b2283eef01f3b29798c.jpg?tbpicau=2022-05-21-05_b20a3fd5f9b604fe3f1cd5910c7f3d59","3.jpg");
+
+
+        TestThread2 t1 = new TestThread2("https://storage.sekai.best/sekai-assets/character/member/res021_no001_rip/card_normal.png","miku1.png");
+        TestThread2 t2 = new TestThread2("https://imgsa.baidu.com/forum/w%3D580/sign=5711ffcb387adab43dd01b4bbbd5b36b/d8f97bcb0a46f21f110112b0f8246b600d33aecb.jpg","2test.jpg");
+        TestThread2 t3 = new TestThread2("http://tiebapic.baidu.com/forum/w%3D580/sign=8207f7b92cc79f3d8fe1e4388aa0cdbc/3981f8faaf51f3deffb50b2283eef01f3b29798c.jpg?tbpicau=2022-05-21-05_b20a3fd5f9b604fe3f1cd5910c7f3d59","3test.jpg");
         t1.start();
         t2.start();
         t3.start();

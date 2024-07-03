@@ -29,7 +29,7 @@ public class Set_Method {
         while(iterator.hasNext()){
             Object obj = iterator.next();
             System.out.println(obj);
-        }
+        } 
 
         //增强for
         for (Object obj:set) {

@@ -28,7 +28,7 @@ public class TalkReceive implements Runnable{
                     DatagramPacket packet = new DatagramPacket(data,0,data.length);
                     socket.receive(packet);//阻塞式接受包裹
 
-                    //断开链接-bye
+                    //断开链接-bye+
                     byte[] datas = packet.getData();
                     String str = new String(datas, 0, datas.length);
                     System.out.println("接收到:"+str);

@@ -44,6 +44,68 @@ public class Face10 {
     //aop
 
     //注入方式哪几种
+    /**
+     * https://blog.csdn.net/qiuz1024/article/details/100064539
+     *
+     * @Component
+     *     public class StayService {
+     *
+     *                @Autowired
+     *        private StayDao stayDao;
+     *
+     *     	public void setStayDao(StayDao stayDao) {
+     *     		System.out.println("-----set-------");
+     *        }
+     *
+     *     	public void query(){
+     *     		System.out.println(stayDao);
+     *        }
+     *     }
+     * 在上面的代码中。当我们向IndexDao中注入IndexService时，
+     * 会去Spring容器中共寻找IndexService这个类型的bean,寻找的方式一般是根据byType,
+     * 再byName去找。所以ByType和ByName再这里只是我们寻找bean的一主方式。它的注入是通过filed.set来注入的，而不是通过set方法。
+     *
+     * @Autowired加在构造方法上（也可以不加@Autowired注解）通过构造方法注入。
+     * @Component
+     * public class StayService {
+     *
+     * //	@Autowired
+     * 	private StayDao stayDao;
+     *
+     *        @Autowired
+     *    public StayService(StayDao stayDao){
+     * 		this.stayDao = stayDao;
+     * 		System.out.println("构造方法 "+this.stayDao);
+     *    }
+     *
+     *
+     * 	public void setStayDao(StayDao stayDao) {
+     * 		System.out.println("-----set-------");
+     *    }
+     *
+     * //	public void query(){
+     * //		System.out.println(stayDao);
+     * //	}
+     *
+     *
+     * @Autowired加在set方法上采用的是set方法反射注入。44500
+     * @Component
+     * public class StayService {
+     *
+     * 	private StayDao stayDao;
+     *
+     *        @Autowired
+     *    public void setStayDao(StayDao stayDao) {
+     * 		System.out.println("-----set-------"+stayDao);
+     *    }
+     * }
+     *
+     *
+     *
+     */
+
+
+
     //redis数据类型 位图的使用..真tm有人问这个啊
     //springboot自动装配相关,代码是怎么写的
     //rabbitmq 死信队列,消息订阅模式
