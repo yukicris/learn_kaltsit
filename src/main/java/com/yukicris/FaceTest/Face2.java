@@ -89,6 +89,9 @@ public class Face2 {
         String str = "a" + "b" + "c";
         String str1 = "abc";
         String a = "a";  String b = "b";   String c = "c";
+        //因为这种情况是变量之间相加，已经不是之前的常量相加了，经过编译器优化成了StringBuilder，所以答案是创建了三个对象。
+        // new StringBuilder()、new String()、“abc”，因为最终会通过StringBuilder()里面的toString()方法进行new String(“abc”)类型转换。
+
         String str2 = a+b+c;
         System.out.println(str);
         System.out.println(str1);

@@ -44,4 +44,25 @@ public class Face16 {
      */
 
 
+    public static void main(String[] args) {
+        String a = "hello";
+        String b = "he"+new String("llo");
+        System.err.println(a==b);  //false  -顺便equals是true
+    }
+
+    // 查语文比数学好的同学名单
+ /*   select chinese.student_id,chinese.cname,chinese.number,math.cname,math.number from
+            (select student_id,cname,number from score
+                    left join course on score.course_id=course.cid
+                    where cname="语文") as chinese
+    left join
+            (select student_id,cname,number from score
+                    left join course on score.course_id=course.cid
+                    where cname="数学") as math
+    on chinese.student_id=math.student_id
+    where chinese.number>math.number;*/
+
+
+
+
 }
