@@ -8,4 +8,9 @@ public class git {
    /* $ git stash
     $ git reset --hard HEAD^
     $ git stash pop  # or `git stash apply`, if you want to keep the changeset in the stash*/
+
+
+
+
+
 }
