@@ -5,5 +5,6 @@ package com.yukicris.baseUpgrade.Day1._01知识回顾;
  *  p5
  */
 public class ThisDemo02 {
+    //这边是java核心编程思想
     //
 }
