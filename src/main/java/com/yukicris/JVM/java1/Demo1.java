@@ -20,7 +20,7 @@ public class Demo1 {
 
     //调用其他接口: Socket,WebService,Http
 
-    //Native Method Stack
+    //Native Method Stac
     //它的具体做法是Native Method Stack登记的native 方法,在Execution Engine 执行引擎执行的时候加载Native Libraies 本地库
 
 

@@ -35,7 +35,7 @@ public class knowledge4 {
      *
      *                  {
      *                      在java目录下,新建properities
-     *                      在resource目录下,新建properties
+     *                      在resource目录下,新建properties(应该类似模拟从数据库读取数据)
      *
      *                      发现,都被打包到了一个路径下,classes.我们俗称这个路径为classPath(类路径)
      *                      (此步构建在yukicris_practice的practic2,properities_servlet中实现了)

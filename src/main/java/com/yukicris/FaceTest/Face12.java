@@ -25,9 +25,9 @@ public class Face12 {
     public static void main(String[] args) {
         String a = "asdcccsds";
         a = a.replace("c","m");
-        int b = a.indexOf("m");//返回此字符第一次出现的索引
-        int c = a.indexOf(1);//返回此字符第一次出现的索引
-        int d = a.indexOf("s",4);//返回此字符从第四个字符开始第一次出现的索引
+        int b = a.indexOf("m");//返回此字符第一次出现的索引  3
+        int c = a.indexOf(1);//返回此字符第一次出现的索引  -1
+        int d = a.indexOf("s",4);//返回此字符从第四个字符开始第一次出现的索引  6（不是从头开始计算）
         System.out.println(a);
         System.out.println(b);
         System.out.println(c);

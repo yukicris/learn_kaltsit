@@ -23,8 +23,8 @@ public class Car {
         System.out.println(car3.hashCode());
 
         Class<? extends Car> aClass1 = car1.getClass();
-        Class<? extends Car> aClass2 = car1.getClass();
-        Class<? extends Car> aClass3 = car1.getClass();
+        Class<? extends Car> aClass2 = car2.getClass();
+        Class<? extends Car> aClass3 = car3.getClass();
 
         //打印的这三个是一样的
         System.out.println(aClass1);

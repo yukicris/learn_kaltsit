@@ -27,8 +27,7 @@ public class ArrayListSource {
 
         for (int i = 0; i <= 10; i++) {
             arrayList.add(i);
-         /*   public boolean add(E e) {
-                ensureCapacityInternal(size + 1);  // Increments modCount!!
+         /*   public boolean add(E e) {                ensureCapacityInternal(size + 1);  // Increments modCount!!
                 elementData[size++] = e;
                 return true;
             }*/
