@@ -11,7 +11,10 @@ public class TestRunnable1 implements Runnable{
 
 
     public static void main(String[] args) {
+
+        // 创建TestRunnable1类的实例，该类实现了Runnable接口，用于定义线程执行的任务
         TestRunnable1 testRunnable1 = new TestRunnable1();
+
         //创建线程对象,通过线程对象来开启线程,代理
        /* Thread thread = new Thread(testRunnable1);
         thread.start();*/
