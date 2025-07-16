@@ -20,7 +20,7 @@ public class Face10 {
         //1 用集合的方法,
 
         String[] strArray = {"1","2","3"};
-        ArrayList< String> arrayList = new ArrayList<String>(strArray.length);
+        ArrayList<String> arrayList = new ArrayList<String>(strArray.length);
         Collections.addAll(arrayList, strArray);
         arrayList.add("1");
         System.out.println(arrayList);
@@ -50,7 +50,7 @@ public class Face10 {
      * @Component
      *     public class StayService {
      *
-     *                @Autowired
+     *         @Autowired
      *        private StayDao stayDao;
      *
      *     	public void setStayDao(StayDao stayDao) {
