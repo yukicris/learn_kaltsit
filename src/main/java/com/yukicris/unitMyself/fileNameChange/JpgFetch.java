@@ -8,7 +8,10 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class JpgFetch extends Thread{
 
@@ -34,71 +37,53 @@ public class JpgFetch extends Thread{
 
     //爬取网站图片
     public static void main(String[] args) {
-        /**爬第一个链接*/
-        String url = "https://storage.sekai.best/sekai-assets/character/member/res021_no001_rip/card_normal.png";
-        List<String> list = new ArrayList<>();
-        list.add("星乃 一歌");
-        list.add("天马 咲希");
-        list.add("望月 穗波");
-       /* list.add("日野森 志步");
-        list.add("花里 实乃里");
-        list.add("桐谷 遥");
-        list.add("桃井 爱莉");
-        list.add("日野森 雫");*/
-        List<String> list1 = new ArrayList<>();
-        list1.add("小豆泽 心羽");
-        list1.add("白石杏");
-        list1.add("a");
-        list1.add("b");
-        list1.add("c");
-        list1.add("凤 笑梦");
-        list1.add("草薙 宁宁");
-        list1.add("d");
-        List<String> list2= new ArrayList<>();
-        list2.add("宵崎 奏");
-        list2.add("朝比奈 真冬");
-        list2.add("东云 绘名");
-        list2.add("晓山 瑞希");
-        list2.add("初音 未来");
-        list2.add("镜音 铃");
-        list2.add("巡音 流歌");
-        list2.add("MEIKO");
-
-        //URL替换
-        String memNum = ""; //角色编码
-        String picNum = ""; //
-
+        // 角色名称列表
+        List<String> list = new ArrayList<>(Arrays.asList(
+                "星乃 一歌", "天马 咲希", "望月 穂波"
+        ));
+        // 使用线程池管理线程
+        ExecutorService executorService = Executors.newFixedThreadPool(5); // 根据系统资源调整线程池大小
+        // 公共保存路径前缀
+        String basePath = "D:\\pjskAF\\";
+        // 遍历角色列表
         for (int i = 0; i < list.size(); i++) {
-            //创建文件夹
-            String newFile = list.get(i);
-            File file = new File("D:\\pjskAF\\"+newFile);
-            file.mkdir();
+            String characterName = list.get(i);
+            // 创建保存目录
+            File saveDir = new File(basePath + characterName);
+            if (!saveDir.exists()) {
+                saveDir.mkdirs();
+            }
+            // 生成角色编号
+            String memNum = (i < 9 ? "00" : i < 99 ? "0" : "") + (i + 1);
+            
+            // 下载图片任务
             for (int j = 1; j < 40; j++) {
-                //"https://storage.sekai.best/sekai-assets/character/member/res021_no001_rip/card_normal.png"
-                if(i<10){
-                    memNum="00" + String.valueOf(i+1);
-                }else {
-                    memNum="0"+String.valueOf(i+1);
-                }
-                if(j<10){
-                    picNum="00"+String.valueOf(j);
-                }else {
-                    picNum="0"+String.valueOf(j);
-                }
-                String downUrl = "https://storage.sekai.best/sekai-jp-assets/character/member/res"+memNum+"_no"+picNum+"_rip/card_normal.png";
-                //String downName = list.get(i)+picNum + ".png";
-                String afterDownName = "AF"+list.get(i)+picNum + ".png";
-                // 花前下载
-                //JpgFetch jf1 = new JpgFetch(downUrl,downName,"D:\\pjskAF\\"+newFile);
-                // 花后下载
-                //https://storage.sekai.best/sekai-jp-assets/character/member/res001_no035_rip/card_normal.png
-                String downUrl1 = "https://storage.sekai.best/sekai-jp-assets/character/member/res"+memNum+"_no"+picNum+"_rip/card_after_training.png";
-                JpgFetch jf2 = new JpgFetch(downUrl,afterDownName,"D:\\pjskAF\\"+newFile);
-                System.out.println(afterDownName+"-----"+downUrl);
-                jf2.start();//加了线程一直有图片下载不完整的问题,很奇怪
+                String picNum = (j < 10 ? "00" : j < 100 ? "0" : "") + j;
+                
+                // 构建URL和文件名
+                                //https://storage.sekai.best/sekai-jp-assets/character/member/res001_no044/card_normal.png
+                String downUrl = "https://storage.sekai.best/sekai-jp-assets/character/member/res" + 
+                                memNum + "_no" + picNum + "/card_normal.png";
+                String afterDownName = "AF" + characterName + picNum + ".png";
+                
+                // 构建保存路径
+                String savePath = basePath + characterName;
+                
+                // 提交下载任务
+                final String finalUrl = downUrl;
+                final String finalName = afterDownName;
+                final String finalSavePath = savePath;
+                
+                executorService.submit(() -> {
+                    JpgFetch fetcher = new JpgFetch(finalUrl, finalName, finalSavePath);
+                    fetcher.start();
+                    System.out.println(finalName + "-----" + finalUrl);
+                });
             }
         }
-
+        
+        // 关闭线程池
+        executorService.shutdown();
     }
 
 
@@ -116,40 +101,55 @@ public class JpgFetch extends Thread{
         }
     }
 
-    class  UrlDwonLoader{
-        //用url方式下载(加个同步防止卡死)
-        public synchronized void downloader(String url,String name,String savePath) { //同步锁,这样就不会出现程序跑不完一直卡住
-            try {
-                //把网页上的url变成文件
-                URL url1 = new URL(url);
-                //模拟真实请求
-                URLConnection connection = url1.openConnection();
-                //设置超时时间(有时候执行卡死死考虑是不是互锁了)
-                // connection.setReadTimeout(10*1000);
-                connection.setRequestProperty("User-Agent","Mozilla/5.0");
+    class UrlDwonLoader {
+        // 使用缓冲流优化下载，添加重试机制和更灵活的超时配置
+        public void downloader(String url, String name, String savePath) {
+            int retryCount = 3; // 重试次数
+            int timeout = 15000; // 超时时间
 
-                //转换流
-                InputStream inputStream = connection.getInputStream();
-                //保存路径+ 创建一个新文件夹
-                String newFile = name.replace(name.substring(name.length()-7,name.length()),"");
-                /* File file = new File("D:\\pjsk\\"+newFile);
-                file.mkdir();*/
-
-                FileOutputStream fileOutputStream = new FileOutputStream(new File(savePath+"\\"+name));
-                byte[] buffer = new byte[1024];
-                int byteRead;
-                while ((byteRead=inputStream.read(buffer))!=-1) {
-                    fileOutputStream.write(buffer,0,byteRead);
+            for (int attempt = 0; attempt < retryCount; attempt++) {
+                try {
+                    URL url1 = new URL(url);
+                    URLConnection connection = url1.openConnection();
+                    
+                    // 设置连接参数
+                    connection.setConnectTimeout(timeout);
+                    connection.setReadTimeout(timeout);
+                    connection.setRequestProperty("User-Agent", "Mozilla/5.0");
+                    
+                    // 创建文件目录（如果不存在）
+                    File saveFile = new File(savePath + "\\" + name);
+                    if (!saveFile.getParentFile().exists()) {
+                        saveFile.getParentFile().mkdirs();
+                    }
+                    // 使用缓冲流提升效率
+                    try (InputStream inputStream = connection.getInputStream();
+                         FileOutputStream fileOutputStream = new FileOutputStream(saveFile)) {
+                         
+                        byte[] buffer = new byte[8192]; // 增大缓冲区
+                        int bytesRead;
+                        while ((bytesRead = inputStream.read(buffer)) != -1) {
+                            fileOutputStream.write(buffer, 0, bytesRead);
+                        }
+                        
+                        System.out.println(name + " 下载成功");
+                        break; // 成功则跳出重试循环
+                    }
+                } catch (Exception e) {
+                    if (attempt < retryCount - 1) {
+                        System.out.println(name + " 第 " + (attempt + 1) + " 次下载失败，正在重试...");
+                        try {
+                            Thread.sleep(2000); // 重试前等待
+                        } catch (InterruptedException ie) {
+                            Thread.currentThread().interrupt();
+                            break;
+                        }
+                    } else {
+                        System.err.println(name + " 下载失败: " + e.getMessage());
+                        e.printStackTrace();
+                    }
                 }
-
-                fileOutputStream.flush();
-                fileOutputStream.close();
-                inputStream.close();
-            }catch(Exception e) {
-                e.printStackTrace();
-                System.out.println("IO异常,downloader方法出现问题");
             }
-
         }
     }
 
